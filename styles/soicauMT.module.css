@@ -1,0 +1,491 @@
+/* General Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.titleGroup {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+}
+
+/* Select Group */
+.groupSelect {
+    margin-bottom: 16px;
+}
+
+.selectGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.options {
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.select {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.select:hover {
+    border-color: #dc2626;
+    box-shadow: 0 0 6px rgba(220, 38, 38, 0.2);
+}
+
+/* Error Message */
+.error {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: #e5e7eb;
+    height: 20px;
+    border-radius: 4px;
+    animation: skeleton-loading 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background: #e5e7eb;
+    }
+
+    100% {
+        background: #f3f4f6;
+    }
+}
+
+/* Table Wrapper */
+.tableWrapper {
+    overflow-x: auto;
+    margin-bottom: 16px;
+}
+
+/* Metadata Table */
+.metadataTable {
+    width: 100%;
+    /* display: flex; */
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.metadataTable td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.metadataTable td:first-child {
+    line-height: 1.3;
+    font-weight: 600;
+    color: #dc2626;
+    width: 40%;
+}
+
+.metadataTable td:last-child {
+    color: #334155;
+    font-weight: 500;
+}
+
+/* Lottery Table */
+.lotteryTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.lotteryTable th,
+.lotteryTable td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+}
+
+.lotteryTable th {
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.lotteryTable td {
+    color: #334155;
+}
+
+.specialPrize {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* Soi Cầu Table */
+.tableSoiCau {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tableSoiCau th,
+.tableSoiCau td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+}
+
+.tableSoiCau th {
+    line-height: 1.3;
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tableSoiCau td {
+    color: #334155;
+}
+
+.method {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+}
+
+.tooltipIcon {
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: #dc2626;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: -120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: normal;
+    width: 200px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.method:hover .tooltip {
+    display: block;
+}
+
+.highlight {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.noData {
+    color: #64748b;
+    font-style: italic;
+}
+
+/* History Table */
+.historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.historyTable th,
+.historyTable td {
+    line-height: 1.3;
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+}
+
+.historyTable th {
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.historyTable td {
+    color: #334155;
+}
+
+.matchedNumber {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.hit {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.miss {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* Frequency Table */
+.frequencyTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.frequencyTable th,
+.frequencyTable td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+}
+
+.frequencyTable th {
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.frequencyTable td {
+    color: #334155;
+}
+
+/* Related Numbers */
+.relatedNumbers {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.relatedNumbers div {
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.relatedNumbers strong {
+    color: #dc2626;
+}
+
+/* Headings and Descriptions */
+.heading {
+    line-height: 1.3;
+    color: #1e293b;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.h3 {
+    color: #1e293b;
+    font-size: 1.1rem;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.desc {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Scroll to Top Button */
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: none;
+    transition: background 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.scrollToTopBtn:hover {
+    background: #b91c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .selectGroup {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .select {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .options {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 4px;
+    }
+
+    .tableWrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .lotteryTable th,
+    .lotteryTable td,
+    .tableSoiCau th,
+    .tableSoiCau td,
+    .historyTable th,
+    .historyTable td,
+    .frequencyTable th,
+    .frequencyTable td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .metadataTable td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .metadataTable td:first-child {
+        width: 50%;
+    }
+
+    .heading {
+        font-size: 1.25rem;
+    }
+
+    .h3 {
+        font-size: 1rem;
+    }
+
+    .desc {
+        font-size: 0.85rem;
+    }
+
+    .tooltip {
+        width: 150px;
+        font-size: 0.75rem;
+    }
+
+    .scrollToTopBtn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .heading {
+        font-size: 1.1rem;
+    }
+
+    .h3 {
+        font-size: 0.9rem;
+    }
+
+    .desc {
+        font-size: 0.8rem;
+    }
+
+    .metadataTable td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 6px 8px;
+    }
+
+    .metadataTable td:first-child {
+        padding-bottom: 0;
+    }
+
+    .metadataTable td:last-child {
+        padding-top: 0;
+        margin-bottom: 8px;
+    }
+}

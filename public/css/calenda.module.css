@@ -1,0 +1,234 @@
+.calendarContainer {
+    color: var(--primary-color);
+    width: 300px;
+    font-weight: 550;
+    min-height: 330px;
+    height: 340px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.optionMoth {
+    border: 1px solid var(--primary-color);
+}
+
+.navButton:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.selectContainer {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.select {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+}
+
+.calendarDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.dayHeader {
+    font-weight: bold;
+    color: #555;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.day {
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.day:hover {
+    background-color: #e0e0e0;
+}
+
+.today {
+    border: 2px solid var(--primary-color);
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+.selected {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.emptyDay {
+    padding: 5px;
+}
+
+.slugOutput {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.slugLink {
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 25px;
+    line-height: 28px;
+    background-color: #007bff;
+    color: #ffff;
+    font-weight: 700;
+}
+
+.slugLink:hover {
+    text-decoration: underline;
+}
+
+.day:hover {
+    background-color: #007bff;
+    color: var(--color-white);
+}
+
+/* Overlay cho modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Làm mờ nền */
+    z-index: 99;
+    /* Dưới calendarContainerMobile */
+}
+
+/* Responsive Styles */
+
+/* PC */
+@media screen and (min-width: 992px) {
+    .calendarContainerMobile {
+        display: none;
+    }
+
+    .iconMenu {
+        display: none;
+    }
+
+    .overlay {
+        display: none;
+    }
+}
+
+/* Tablet and mobile */
+@media screen and (max-width: 991px) {
+    .calendarContainer {
+        display: none;
+    }
+
+    .calendarContainerMobile {
+        color: var(--primary-color);
+        width: 300px;
+        font-weight: 550;
+        min-height: 330px;
+        height: 340px;
+        border: 1px solid var(--primary-color);
+        border-radius: 10px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        /* Sử dụng fixed để căn giữa */
+        top: 250px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Căn giữa modal */
+        z-index: 100;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .CalendarToggle {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .iconMenu {
+        position: absolute;
+        display: block;
+        top: 20px;
+        right: 0px;
+        width: 60px;
+        font-size: 40px;
+        color: var(--primary-color);
+        z-index: 101;
+        /* Trên overlay và modal */
+    }
+
+    .iconMenu:hover {
+        color: var(--background-color);
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .calendarContainerMobile {
+        width: 90%;
+        /* Giảm chiều rộng để phù hợp màn hình nhỏ */
+        max-width: 300px;
+    }
+
+    .nav_itemLink {
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    .nav__menu {
+        min-width: 150px;
+    }
+}

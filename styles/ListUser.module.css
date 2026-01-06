@@ -1,0 +1,733 @@
+/* Modern User List Component - Phù hợp với bố cục diễn đàn */
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	/* height: 100vh; */
+	background: #f8fafc;
+	border-right: 1px solid #e2e8f0;
+	overflow: hidden;
+}
+
+/* Header Section */
+.header {
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	padding: 16px;
+	border-bottom: 1px solid #e2e8f0;
+	flex-shrink: 0;
+}
+
+.headerContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 18px;
+	font-weight: 700;
+	color: white;
+	margin: 0;
+}
+
+.titleIcon {
+	font-size: 20px;
+}
+
+.stats {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.statItem {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px 8px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	color: white;
+}
+
+.statIcon {
+	font-size: 12px;
+}
+
+.resetButton {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+	min-width: 44px;
+}
+
+.resetButton:hover:not(:disabled) {
+	background: linear-gradient(135deg, #2563eb, #1e40af);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.resetButton:disabled {
+	background: #9ca3af;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+.resetIcon {
+	font-size: 12px;
+}
+
+.resetIcon.spinning {
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Search Section */
+.searchSection {
+	padding: 12px 16px;
+	background: white;
+	border-bottom: 1px solid #e2e8f0;
+	flex-shrink: 0;
+}
+
+.searchContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.searchInput {
+	width: 100%;
+	padding: 8px 12px 8px 36px;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	font-size: 14px;
+	background: white;
+	color: #374151;
+	transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+	outline: none;
+	border-color: #3b82f6;
+	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.searchIcon {
+	position: absolute;
+	left: 12px;
+	font-size: 14px;
+	color: #6b7280;
+	pointer-events: none;
+}
+
+/* Content Sections */
+.newRegistrationsSection,
+.onlineUsersSection {
+	/* height: 300px; */
+	overflow-y: auto;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.allUsersSection {
+	height: 300px;
+	overflow-y: auto;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.sectionHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	background: #f1f5f9;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.sectionTitle {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #374151;
+	margin: 0;
+}
+
+.sectionIcon {
+	font-size: 16px;
+}
+
+.sectionCount {
+	padding: 2px 8px;
+	background: #3b82f6;
+	color: white;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+/* New Registrations List */
+.newRegistrationsList {
+	padding: 8px;
+}
+
+.newUserItem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+	border-radius: 6px;
+	background: white;
+	margin-bottom: 4px;
+	border: 1px solid #e2e8f0;
+	transition: all 0.2s ease;
+}
+
+.newUserItem:hover {
+	background: #f8fafc;
+	border-color: #3b82f6;
+}
+
+.newUserInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	flex: 1;
+}
+
+.newUserName {
+	font-size: 13px;
+	font-weight: 600;
+	color: #111827;
+}
+
+.newUserTime {
+	font-size: 11px;
+	color: #6b7280;
+}
+
+/* Users List */
+.usersList {
+	padding: 8px;
+}
+
+.userItem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+	border-radius: 6px;
+	background: white;
+	margin-bottom: 4px;
+	border: 1px solid #e2e8f0;
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+
+.userItem:hover {
+	background: #f8fafc;
+	border-color: #3b82f6;
+}
+
+.userInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	flex: 1;
+}
+
+.userName {
+	font-size: 13px;
+	font-weight: 600;
+	color: #111827;
+}
+
+.userStatus {
+	font-size: 11px;
+	color: #6b7280;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.onlineIndicator {
+	color: #22c55e;
+}
+
+.offlineIndicator {
+	color: #6b7280;
+}
+
+/* Avatar Styles */
+.avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	flex-shrink: 0;
+}
+
+.avatar:hover {
+	transform: scale(1.1);
+}
+
+.avatarImage {
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.avatarInitials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+}
+
+/* Admin and User Avatar Colors */
+.admin {
+	background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.user {
+	background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Empty State */
+.emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	padding: 24px;
+	text-align: center;
+}
+
+.emptyIcon {
+	font-size: 24px;
+}
+
+.emptyText {
+	font-size: 12px;
+	color: #6b7280;
+	font-weight: 500;
+}
+
+/* Error Container */
+.errorContainer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 16px;
+	background: #fef2f2;
+	border: 1px solid #fecaca;
+	border-radius: 6px;
+	margin: 16px;
+	color: #dc2626;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.errorIcon {
+	font-size: 14px;
+}
+
+.errorText {
+	flex: 1;
+}
+
+/* Private Chats Container */
+.privateChatsContainer {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.container {
+		height: auto;
+		/* min-height: 100vh; */
+	}
+
+	.header {
+		padding: 12px;
+	}
+
+	.headerContent {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.title {
+		font-size: 16px;
+	}
+
+	.titleIcon {
+		font-size: 16px;
+	}
+
+	.stats {
+		width: 100%;
+		gap: 6px;
+	}
+
+	.statItem {
+		padding: 4px 6px;
+		font-size: 11px;
+	}
+
+	.statIcon {
+		font-size: 10px;
+	}
+
+	.resetButton {
+		padding: 6px 12px;
+		font-size: 11px;
+		min-width: 44px;
+	}
+
+	.resetIcon {
+		font-size: 10px;
+	}
+
+	.searchSection {
+		padding: 8px 12px;
+	}
+
+	.searchInput {
+		padding: 6px 10px 6px 30px;
+		font-size: 13px;
+	}
+
+	.searchIcon {
+		left: 10px;
+		font-size: 12px;
+	}
+
+	.sectionHeader {
+		padding: 8px 12px;
+	}
+
+	.sectionTitle {
+		font-size: 13px;
+	}
+
+	.sectionIcon {
+		font-size: 14px;
+	}
+
+	.sectionCount {
+		font-size: 11px;
+	}
+
+	.newRegistrationsList,
+	.usersList {
+		padding: 6px;
+	}
+
+	.newUserItem,
+	.userItem {
+		padding: 6px;
+		gap: 6px;
+	}
+
+	.avatar {
+		width: 28px;
+		height: 28px;
+		font-size: 12px;
+	}
+
+	.avatarImage,
+	.avatarInitials {
+		width: 28px;
+		height: 28px;
+		font-size: 12px;
+	}
+
+	.newUserName,
+	.userName {
+		font-size: 12px;
+	}
+
+	.newUserTime,
+	.userStatus {
+		font-size: 10px;
+	}
+
+	.emptyState {
+		padding: 16px;
+	}
+
+	.emptyIcon {
+		font-size: 20px;
+	}
+
+	.emptyText {
+		font-size: 11px;
+	}
+
+	.errorContainer {
+		padding: 8px 12px;
+		margin: 12px;
+		font-size: 11px;
+	}
+
+	.errorIcon {
+		font-size: 12px;
+	}
+
+	.privateChatsContainer {
+		bottom: 10px;
+		right: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.header {
+		padding: 8px;
+	}
+
+	.headerContent {
+		gap: 6px;
+	}
+
+	.title {
+		font-size: 14px;
+	}
+
+	.titleIcon {
+		font-size: 14px;
+	}
+
+	.stats {
+		gap: 4px;
+	}
+
+	.statItem {
+		padding: 3px 5px;
+		font-size: 10px;
+	}
+
+	.statIcon {
+		font-size: 8px;
+	}
+
+	.resetButton {
+		padding: 4px 8px;
+		font-size: 10px;
+	}
+
+	.resetIcon {
+		font-size: 8px;
+	}
+
+	.searchSection {
+		padding: 6px 8px;
+	}
+
+	.searchInput {
+		padding: 4px 8px 4px 28px;
+		font-size: 12px;
+	}
+
+	.searchIcon {
+		left: 8px;
+		font-size: 10px;
+	}
+
+	.sectionHeader {
+		padding: 6px 8px;
+	}
+
+	.sectionTitle {
+		font-size: 12px;
+	}
+
+	.sectionIcon {
+		font-size: 12px;
+	}
+
+	.sectionCount {
+		font-size: 10px;
+	}
+
+	.newRegistrationsList,
+	.usersList {
+		padding: 4px;
+		/* height: 300px; */
+		/* height: 800px;
+		overflow-y: auto; */
+	}
+
+	.newUserItem,
+	.userItem {
+		padding: 4px;
+		gap: 4px;
+	}
+
+	.avatar {
+		width: 24px;
+		height: 24px;
+		font-size: 10px;
+	}
+
+	.avatarImage,
+	.avatarInitials {
+		width: 24px;
+		height: 24px;
+		font-size: 10px;
+	}
+
+	.newUserName,
+	.userName {
+		font-size: 11px;
+	}
+
+	.newUserTime,
+	.userStatus {
+		font-size: 9px;
+	}
+
+	.emptyState {
+		padding: 12px;
+	}
+
+	.emptyIcon {
+		font-size: 18px;
+	}
+
+	.emptyText {
+		font-size: 10px;
+	}
+
+	.errorContainer {
+		padding: 6px 8px;
+		margin: 8px;
+		font-size: 10px;
+	}
+
+	.errorIcon {
+		font-size: 10px;
+	}
+
+	.privateChatsContainer {
+		bottom: 5px;
+		right: 5px;
+	}
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+	.container {
+		background: #1f2937;
+		border-right-color: #374151;
+	}
+
+	.header {
+		background: linear-gradient(135deg, #4f46e5, #7c3aed);
+		border-bottom-color: #374151;
+	}
+
+	.searchSection {
+		background: #111827;
+		border-bottom-color: #374151;
+	}
+
+	.searchInput {
+		background: #374151;
+		border-color: #4b5563;
+		color: #f9fafb;
+	}
+
+	.searchInput:focus {
+		border-color: #6366f1;
+		box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+	}
+
+	.searchIcon {
+		color: #9ca3af;
+	}
+
+	.sectionHeader {
+		background: #374151;
+		border-bottom-color: #4b5563;
+	}
+
+	.sectionTitle {
+		color: #f9fafb;
+	}
+
+	.newUserItem,
+	.userItem {
+		background: #374151;
+		border-color: #4b5563;
+	}
+
+	.newUserItem:hover,
+	.userItem:hover {
+		background: #4b5563;
+		border-color: #6366f1;
+	}
+
+	.newUserName,
+	.userName {
+		color: #f9fafb;
+	}
+
+	.newUserTime,
+	.userStatus {
+		color: #9ca3af;
+	}
+
+	.emptyText {
+		color: #9ca3af;
+	}
+
+	.errorContainer {
+		background: #7f1d1d;
+		border-color: #fca5a5;
+		color: #fca5a5;
+	}
+}

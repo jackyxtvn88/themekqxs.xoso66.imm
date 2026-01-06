@@ -1,0 +1,992 @@
+/* Modern Lottery Registration History Component - Compact Design */
+.container {
+	width: 100%;
+	background: white;
+	border-radius: var(--radius-xl);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--neutral-200);
+	overflow: hidden;
+	font-family: var(--font-sans);
+}
+
+/* Header Section */
+.header {
+	background: linear-gradient(
+		135deg,
+		var(--accent-purple-50),
+		var(--accent-blue-50)
+	);
+	padding: var(--space-4);
+	border-bottom: 1px solid var(--neutral-200);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	font-size: var(--text-xl);
+	font-weight: 700;
+	color: var(--neutral-800);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+.titleIcon {
+	font-size: var(--text-lg);
+}
+
+.resetButton {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-2) var(--space-3);
+	background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+	color: white;
+	border: none;
+	border-radius: var(--radius-lg);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.resetButton:hover:not(:disabled) {
+	background: linear-gradient(135deg, #2563eb, #1e40af);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.resetButton:disabled {
+	background: #9ca3af;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+.resetIcon {
+	font-size: var(--text-sm);
+	transition: transform 0.3s ease;
+}
+
+.spinning {
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.stats {
+	display: flex;
+	gap: var(--space-3);
+}
+
+.statItem {
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	color: var(--neutral-600);
+	padding: var(--space-1) var(--space-2);
+	background: white;
+	border-radius: var(--radius-md);
+	border: 1px solid var(--neutral-200);
+}
+
+.statIcon {
+	font-size: var(--text-base);
+}
+
+/* Filters Section */
+.filters {
+	padding: var(--space-4);
+	background: var(--neutral-50);
+	border-bottom: 1px solid var(--neutral-200);
+}
+
+.filterRow {
+	display: flex;
+	gap: var(--space-4);
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
+
+.filterGroup {
+	flex: 1;
+	min-width: 200px;
+}
+
+.filterLabel {
+	display: block;
+	font-size: var(--text-sm);
+	color: var(--neutral-700);
+	margin-bottom: var(--space-2);
+	font-weight: 600;
+}
+
+.filterSelect {
+	width: 100%;
+	padding: var(--space-2) var(--space-3);
+	border: 2px solid var(--neutral-300);
+	border-radius: var(--radius-lg);
+	background: white;
+	color: var(--neutral-800);
+	font-size: var(--text-sm);
+	transition: all 0.3s ease;
+	font-family: var(--font-sans);
+}
+
+.filterSelect:focus {
+	outline: none;
+	border-color: var(--accent-blue-500);
+	box-shadow: 0 0 0 3px var(--accent-blue-100);
+}
+
+.filterSelect:disabled {
+	background: var(--neutral-100);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.loginPrompt {
+	text-align: center;
+	padding: var(--space-4);
+	background: var(--accent-blue-50);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--accent-blue-200);
+	margin-top: var(--space-3);
+}
+
+.loginPrompt p {
+	margin: 0 0 var(--space-2) 0;
+	color: var(--neutral-700);
+	font-size: var(--text-sm);
+}
+
+.loginButton {
+	padding: var(--space-2) var(--space-4);
+	background: linear-gradient(
+		135deg,
+		var(--accent-purple-500),
+		var(--accent-purple-600)
+	);
+	color: white;
+	border: none;
+	border-radius: var(--radius-lg);
+	cursor: pointer;
+	font-size: var(--text-sm);
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+	background: linear-gradient(
+		135deg,
+		var(--accent-purple-600),
+		var(--accent-purple-700)
+	);
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
+}
+
+/* Content Section */
+.content {
+	padding: var(--space-4);
+	max-height: 500px;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--accent-blue-400) var(--neutral-100);
+}
+
+.content::-webkit-scrollbar {
+	width: 6px;
+}
+
+.content::-webkit-scrollbar-track {
+	background: var(--neutral-100);
+	border-radius: var(--radius-sm);
+}
+
+.content::-webkit-scrollbar-thumb {
+	background: var(--accent-blue-400);
+	border-radius: var(--radius-sm);
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+	background: var(--accent-blue-500);
+}
+
+/* Error and Loading Messages */
+.errorMessage {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-3);
+	background: var(--error-50);
+	border: 1px solid var(--error-200);
+	border-radius: var(--radius-lg);
+	color: var(--error-700);
+	font-size: var(--text-sm);
+	margin-bottom: var(--space-4);
+}
+
+.errorIcon {
+	font-size: var(--text-base);
+}
+
+.loadingMessage {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-3);
+	background: var(--accent-blue-50);
+	border: 1px solid var(--accent-blue-200);
+	border-radius: var(--radius-lg);
+	color: var(--accent-blue-700);
+	font-size: var(--text-sm);
+	margin-bottom: var(--space-4);
+}
+
+.loadingIcon {
+	font-size: var(--text-base);
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-6);
+	background: var(--neutral-50);
+	border: 1px solid var(--neutral-200);
+	border-radius: var(--radius-lg);
+	color: var(--neutral-600);
+	font-size: var(--text-sm);
+}
+
+.emptyIcon {
+	font-size: var(--text-2xl);
+}
+
+/* Date Section */
+.dateSection {
+	margin-bottom: var(--space-4);
+}
+
+.dateHeader {
+	margin-bottom: var(--space-3);
+}
+
+.dateTitle {
+	font-size: var(--text-lg);
+	font-weight: 600;
+	color: var(--neutral-800);
+	margin: 0;
+	padding: var(--space-2) var(--space-3);
+	background: var(--accent-blue-50);
+	border-radius: var(--radius-lg);
+	border-left: 4px solid var(--accent-blue-500);
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+/* Event Section */
+.eventSection {
+	margin-bottom: var(--space-3);
+	background: white;
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--neutral-200);
+	overflow: hidden;
+}
+
+.eventHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-3);
+	background: var(--neutral-50);
+	border-bottom: 1px solid var(--neutral-200);
+}
+
+.eventTitle {
+	font-size: var(--text-base);
+	font-weight: 600;
+	color: var(--neutral-800);
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+.registrationCount {
+	font-size: var(--text-xs);
+	color: var(--neutral-600);
+	padding: var(--space-1) var(--space-2);
+	background: var(--accent-blue-100);
+	border-radius: var(--radius-md);
+	font-weight: 500;
+}
+
+.emptyEvent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-4);
+	color: var(--neutral-500);
+	font-size: var(--text-sm);
+}
+
+.emptyEventIcon {
+	font-size: var(--text-xl);
+}
+
+.registrationsList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	padding: var(--space-3);
+}
+
+/* Registration Card */
+.registrationCard {
+	background: white;
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--neutral-200);
+	padding: var(--space-3);
+	transition: all 0.3s ease;
+}
+
+.registrationCard:hover {
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
+	border-color: var(--accent-blue-200);
+}
+
+.userInfo {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	margin-bottom: var(--space-3);
+	padding-bottom: var(--space-3);
+	border-bottom: 1px solid var(--neutral-200);
+}
+
+.userAvatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: var(--text-base);
+	color: white;
+	border: 2px solid var(--neutral-200);
+	box-shadow: var(--shadow-sm);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.userAvatar:hover {
+	transform: scale(1.1);
+	box-shadow: var(--shadow-md);
+}
+
+.userDetails {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.userName {
+	font-weight: 600;
+	color: var(--neutral-800);
+	font-size: var(--text-sm);
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.userName:hover {
+	color: var(--accent-blue-600);
+}
+
+.userMeta {
+	display: flex;
+	gap: var(--space-2);
+	flex-wrap: wrap;
+}
+
+.userRole {
+	font-size: var(--text-xs);
+	color: var(--accent-purple-600);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.userLevel {
+	font-size: var(--text-xs);
+	color: var(--success-600);
+	font-weight: 500;
+}
+
+.userPoints {
+	font-size: var(--text-xs);
+	color: var(--accent-blue-600);
+	font-weight: 500;
+}
+
+.userTitles {
+	font-size: var(--text-xs);
+	color: var(--neutral-600);
+	font-style: italic;
+}
+
+/* Registration Details */
+.registrationDetails {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+}
+
+.registrationMeta {
+	display: flex;
+	gap: var(--space-3);
+	font-size: var(--text-xs);
+	color: var(--neutral-600);
+}
+
+.registrationTime {
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+.registrationRegion {
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+/* Numbers Section */
+.numbersSection {
+	background: var(--neutral-50);
+	padding: var(--space-3);
+	border-radius: var(--radius-md);
+	border: 1px solid var(--neutral-200);
+}
+
+.numbersTitle {
+	font-size: var(--text-sm);
+	font-weight: 600;
+	color: var(--neutral-800);
+	margin: 0 0 var(--space-2) 0;
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+.numbersList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.numberItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-1) var(--space-2);
+	background: white;
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--neutral-200);
+}
+
+.numberLabel {
+	font-size: var(--text-xs);
+	color: var(--neutral-600);
+	font-weight: 500;
+}
+
+.numberValue {
+	font-size: var(--text-xs);
+	color: var(--neutral-800);
+	font-weight: 600;
+}
+
+/* Result Section */
+.resultSection {
+	margin-top: var(--space-3);
+}
+
+.resultTitle {
+	font-size: var(--text-sm);
+	font-weight: 600;
+	color: var(--neutral-800);
+	margin: 0 0 var(--space-2) 0;
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+/* Win Result */
+.winResult {
+	background: var(--success-50);
+	border: 1px solid var(--success-200);
+	border-radius: var(--radius-lg);
+	padding: var(--space-3);
+}
+
+.winIcon {
+	font-size: var(--text-lg);
+	margin-right: var(--space-2);
+}
+
+.winText {
+	font-weight: 600;
+	color: var(--success-700);
+	font-size: var(--text-sm);
+}
+
+.winningNumbers {
+	margin-top: var(--space-2);
+}
+
+.winningNumbers h6 {
+	font-size: var(--text-xs);
+	color: var(--neutral-700);
+	margin: 0 0 var(--space-2) 0;
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+.winningNumbersList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	margin-bottom: var(--space-2);
+}
+
+.winningNumberItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--space-1) var(--space-2);
+	background: white;
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--success-200);
+}
+
+.winningNumberLabel {
+	font-size: var(--text-xs);
+	color: var(--neutral-600);
+	font-weight: 500;
+}
+
+.winningNumberValue {
+	font-size: var(--text-xs);
+	color: var(--success-700);
+	font-weight: 600;
+}
+
+.prizes {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-2);
+	background: var(--success-100);
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--success-300);
+}
+
+.prizesLabel {
+	font-size: var(--text-xs);
+	color: var(--success-700);
+	font-weight: 600;
+}
+
+.prizesValue {
+	font-size: var(--text-xs);
+	color: var(--success-800);
+	font-weight: 600;
+}
+
+/* Lose Result */
+.loseResult {
+	background: var(--error-50);
+	border: 1px solid var(--error-200);
+	border-radius: var(--radius-lg);
+	padding: var(--space-3);
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+.loseIcon {
+	font-size: var(--text-lg);
+}
+
+.loseText {
+	font-weight: 600;
+	color: var(--error-700);
+	font-size: var(--text-sm);
+}
+
+/* Pending Result */
+.pendingResult {
+	background: var(--accent-blue-50);
+	border: 1px solid var(--accent-blue-200);
+	border-radius: var(--radius-lg);
+	padding: var(--space-3);
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+.pendingIcon {
+	font-size: var(--text-lg);
+}
+
+.pendingText {
+	font-weight: 600;
+	color: var(--accent-blue-700);
+	font-size: var(--text-sm);
+}
+
+/* Empty Date */
+.emptyDate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-4);
+	background: var(--neutral-50);
+	border: 1px solid var(--neutral-200);
+	border-radius: var(--radius-lg);
+	color: var(--neutral-500);
+	font-size: var(--text-sm);
+}
+
+.emptyDateIcon {
+	font-size: var(--text-xl);
+}
+
+/* Private Chats Container */
+.privateChatsContainer {
+	position: fixed;
+	bottom: var(--space-5);
+	right: var(--space-5);
+	z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.headerContent {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-2);
+	}
+
+	.title {
+		font-size: var(--text-lg);
+	}
+
+	.filterRow {
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.filterGroup {
+		min-width: 100%;
+	}
+
+	.userInfo {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-2);
+	}
+
+	.userMeta {
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.registrationMeta {
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.numberItem {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-1);
+	}
+
+	.winningNumberItem {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-1);
+	}
+
+	.prizes {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-1);
+	}
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+	.container {
+		background: var(--neutral-800);
+		border-color: var(--neutral-600);
+	}
+
+	.header {
+		background: linear-gradient(
+			135deg,
+			var(--accent-purple-900),
+			var(--accent-blue-900)
+		);
+		border-color: var(--neutral-600);
+	}
+
+	.title {
+		color: var(--neutral-100);
+	}
+
+	.statItem {
+		background: var(--neutral-700);
+		color: var(--neutral-300);
+		border-color: var(--neutral-600);
+	}
+
+	.filters {
+		background: var(--neutral-900);
+		border-color: var(--neutral-600);
+	}
+
+	.filterLabel {
+		color: var(--neutral-200);
+	}
+
+	.filterSelect {
+		background: var(--neutral-800);
+		color: var(--neutral-100);
+		border-color: var(--neutral-600);
+	}
+
+	.filterSelect:focus {
+		border-color: var(--accent-blue-500);
+		box-shadow: 0 0 0 3px var(--accent-blue-900);
+	}
+
+	.filterSelect:disabled {
+		background: var(--neutral-900);
+	}
+
+	.loginPrompt {
+		background: var(--accent-blue-900);
+		border-color: var(--accent-blue-700);
+	}
+
+	.loginPrompt p {
+		color: var(--neutral-200);
+	}
+
+	.dateTitle {
+		background: var(--accent-blue-900);
+		color: var(--accent-blue-200);
+		border-color: var(--accent-blue-600);
+	}
+
+	.eventSection {
+		background: var(--neutral-800);
+		border-color: var(--neutral-600);
+	}
+
+	.eventHeader {
+		background: var(--neutral-900);
+		border-color: var(--neutral-600);
+	}
+
+	.eventTitle {
+		color: var(--neutral-200);
+	}
+
+	.registrationCount {
+		background: var(--accent-blue-900);
+		color: var(--accent-blue-200);
+	}
+
+	.emptyEvent {
+		color: var(--neutral-400);
+	}
+
+	.registrationCard {
+		background: var(--neutral-800);
+		border-color: var(--neutral-600);
+	}
+
+	.registrationCard:hover {
+		border-color: var(--accent-blue-600);
+	}
+
+	.userInfo {
+		border-color: var(--neutral-600);
+	}
+
+	.userName {
+		color: var(--neutral-200);
+	}
+
+	.userName:hover {
+		color: var(--accent-blue-400);
+	}
+
+	.userRole {
+		color: var(--accent-purple-400);
+	}
+
+	.userLevel {
+		color: var(--success-400);
+	}
+
+	.userPoints {
+		color: var(--accent-blue-400);
+	}
+
+	.userTitles {
+		color: var(--neutral-400);
+	}
+
+	.registrationMeta {
+		color: var(--neutral-400);
+	}
+
+	.numbersSection {
+		background: var(--neutral-900);
+		border-color: var(--neutral-600);
+	}
+
+	.numbersTitle {
+		color: var(--neutral-200);
+	}
+
+	.numberItem {
+		background: var(--neutral-800);
+		border-color: var(--neutral-600);
+	}
+
+	.numberLabel {
+		color: var(--neutral-400);
+	}
+
+	.numberValue {
+		color: var(--neutral-200);
+	}
+
+	.winResult {
+		background: var(--success-900);
+		border-color: var(--success-700);
+	}
+
+	.winText {
+		color: var(--success-300);
+	}
+
+	.winningNumbers h6 {
+		color: var(--neutral-300);
+	}
+
+	.winningNumberItem {
+		background: var(--neutral-800);
+		border-color: var(--success-600);
+	}
+
+	.winningNumberLabel {
+		color: var(--neutral-400);
+	}
+
+	.winningNumberValue {
+		color: var(--success-300);
+	}
+
+	.prizes {
+		background: var(--success-900);
+		border-color: var(--success-700);
+	}
+
+	.prizesLabel {
+		color: var(--success-300);
+	}
+
+	.prizesValue {
+		color: var(--success-200);
+	}
+
+	.loseResult {
+		background: var(--error-900);
+		border-color: var(--error-700);
+	}
+
+	.loseText {
+		color: var(--error-300);
+	}
+
+	.pendingResult {
+		background: var(--accent-blue-900);
+		border-color: var(--accent-blue-700);
+	}
+
+	.pendingText {
+		color: var(--accent-blue-300);
+	}
+
+	.emptyDate {
+		background: var(--neutral-900);
+		border-color: var(--neutral-600);
+		color: var(--neutral-400);
+	}
+
+	.errorMessage {
+		background: var(--error-900);
+		border-color: var(--error-700);
+		color: var(--error-300);
+	}
+
+	.loadingMessage {
+		background: var(--accent-blue-900);
+		border-color: var(--accent-blue-700);
+		color: var(--accent-blue-300);
+	}
+
+	.emptyState {
+		background: var(--neutral-900);
+		border-color: var(--neutral-600);
+		color: var(--neutral-400);
+	}
+}

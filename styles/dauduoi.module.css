@@ -1,0 +1,778 @@
+/* Style cơ bản cho container và các thành phần chung */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    padding: 16px;
+    background-color: #ffffff;
+}
+
+/* Nút Điều hướng */
+.actionBtn {
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+/* css ---------Banner */
+
+.banner1 {
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.videobanner {
+    object-fit: cover;
+    width: 400px;
+    height: 100%;
+    max-width: 100%;
+}
+
+.groupbanner3 {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+}
+
+.banner3 {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    font-style: italic;
+    text-align: center;
+    padding: 8px 0;
+    color: #000000a1;
+}
+
+.actionTK {
+    line-height: 20px;
+    border: 1px solid #0396FF;
+    padding: 10px;
+    width: 100%;
+    color: #0396FF;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.actionTK:hover {
+    background-color: #0396FF;
+    color: #ffffff;
+}
+
+.active {
+    color: #ffffff;
+    background-color: #0396FF;
+}
+
+/* Tiêu đề chính */
+.titleGroup {
+    text-align: center;
+    padding: 24px 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background: #ffeca0;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c80505;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Khối nội dung */
+.content {
+    margin-top: 24px;
+    padding: 10px;
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.content:hover {
+    transform: translateY(-1px);
+}
+
+/* Nhóm select box */
+.group_Select {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.selectGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dateTime {
+    padding: 4px 0;
+    font-size: 0.95rem;
+    color: #c80505;
+    font-weight: 700;
+}
+
+.dateTime span {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.selectBox {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    width: 150px;
+    height: 38px;
+    padding: 0 10px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.selectBox:hover {
+    border-color: #c80505;
+    box-shadow: 0 0 0 2px rgba(200, 5, 5, 0.1);
+}
+
+.selectBox:focus {
+    border-color: #ed1c25;
+    box-shadow: 0 0 0 2px rgba(237, 28, 37, 0.2);
+    background-color: #fff5f5;
+}
+
+.selectBox.active {
+    border-color: #ed1c25;
+    background-color: #fff5f5;
+    font-weight: 600;
+    color: #ed1c25;
+}
+
+/* Style cho highlight tên tỉnh trong tiêu đề */
+.highlightProvince {
+    color: #0396FF;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Style cho highlight số lần quay */
+.highlightDraws {
+    color: #ed8936;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.selectBox option:checked {
+    background-color: #ed1c25;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.options {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Style chung cho bảng */
+.table {
+    margin-top: 12px;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    font-size: 0.95rem;
+    font-weight: 700;
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+.table th,
+.table td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+.table tr:hover {
+    background-color: #e0f2fe;
+}
+
+/* Các style cho số liệu cụ thể */
+.number {
+    color: #c80505;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.date {
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.gapDraws {
+    color: #ed1c25;
+    font-weight: 500;
+}
+
+.maxGap {
+    font-weight: 500;
+    color: #c80505;
+}
+
+.gapDraws span,
+.maxGap span {
+    color: #1f2937;
+    font-weight: 400;
+}
+
+/* Khối nội dung mô tả */
+.Group_Content {
+    margin-top: 32px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.heading {
+    padding: 12px 0;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: #c80505;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.h3 {
+    padding: 8px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: #1f2937;
+}
+
+.desc {
+    padding: 4px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.action {
+    color: #c80505;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.action:hover {
+    color: #991b1b;
+}
+
+/* Style cho bảng Đầu Đuôi (bảng 1: tất cả các giải) */
+.tableDauDuoi {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tableDauDuoi th,
+.tableDauDuoi td {
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.tableDauDuoi th {
+    background: #ed1c25;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tableDauDuoi tr:nth-child(odd) {
+    background-color: #e5e7eb63;
+}
+
+.tableDauDuoi td:first-child {
+    width: 10%;
+    font-weight: 600;
+    color: #1f2937;
+    background-color: #f3f4f6;
+}
+
+.tableDauDuoi td:nth-child(2),
+.tableDauDuoi td:nth-child(3) {
+    width: 45%;
+}
+
+.tableDauDuoi tr:hover {
+    background-color: #e0f2fe;
+}
+
+/* Style cho bảng Đầu/Đuôi giải Đặc Biệt (bảng 2) */
+.tableSpecialDauDuoi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.tableSpecialDauDuoi th,
+.tableSpecialDauDuoi td {
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.tableSpecialDauDuoi tr:nth-child(odd) {
+    background-color: #e5e7eb63;
+}
+
+.tableSpecialDauDuoi th {
+    background: #ed1c25;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tableSpecialDauDuoi td:first-child {
+    width: 10%;
+    font-weight: 700;
+    color: #1f2937;
+    background-color: #f3f4f6;
+}
+
+.tableSpecialDauDuoi td:nth-child(2),
+.tableSpecialDauDuoi td:nth-child(3) {
+    width: 45%;
+}
+
+.tableSpecialDauDuoi tr:hover {
+    background-color: #e0f2fe;
+}
+
+/* Style cho thanh ngang biểu thị phần trăm */
+.progressBar {
+    background: #0396FF;
+    height: 14px;
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Style cho phần lần xuất hiện */
+.appearance {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.appearance span {
+    white-space: nowrap;
+    color: #4b5563;
+}
+
+/* Style cho skeleton loading */
+.skeleton {
+    background: linear-gradient(90deg, #e5e7eb 25%, #d1d5db 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 18px;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Style bổ sung để đảm bảo bố cục và các thông báo */
+.metadata {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.error {
+    color: #c80505;
+    text-align: center;
+    margin: 16px 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.noData {
+    text-align: center;
+    color: #4b5563;
+    margin: 16px 0;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* Style cho bảng Đầu/Đuôi theo ngày (bảng 3, 4) */
+.tableDauDuoiByDate {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.tableDauDuoiByDate th,
+.tableDauDuoiByDate td {
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.tableDauDuoiByDate th {
+    background: #ed1c25;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tableDauDuoiByDate tr:nth-child(odd) {
+    background-color: #e5e7eb63;
+}
+
+.tableDauDuoiByDate td:first-child {
+    width: 15%;
+    color: var(--background-color);
+    background-color: #f3f4f6;
+}
+
+.tableDauDuoiByDate td:not(:first-child) {
+    width: calc(85% / 10);
+}
+
+/* Highlight các số xuất hiện từ 4 lần trở lên */
+.tableDauDuoiByDate td.highlight {
+    background-color: #ffeca0;
+    font-weight: 700;
+    color: #130CB7;
+    border-radius: 4px;
+}
+
+/* Hàng tổng ở dưới cùng */
+.tableDauDuoiByDate tr.totalRow {
+    background-color: #e5e7eb;
+    font-weight: 700;
+}
+
+.tableDauDuoiByDate tr.totalRow td:first-child {
+    background-color: #d1d5db;
+    color: #1f2937;
+}
+
+.tableDauDuoiByDate tr:hover:not(.totalRow) {
+    background-color: #e0f2fe;
+}
+
+/* Đảm bảo viền của hàng tổng rõ ràng */
+.tableDauDuoiByDate tr.totalRow td {
+    border-top: 2px solid #e5e7eb;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* Style cho nút "Quay lại đầu trang" */
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    display: none;
+    width: 46px;
+    height: 46px;
+    background: #ed1c25;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scrollToTopBtn:hover {
+    background: #c80505;
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+
+.scrollToTopBtn:active {
+    transform: translateY(0);
+}
+
+/* Style cho chức năng thu gọn/xem thêm */
+.contentWrapper {
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.contentWrapper.collapsed {
+    max-height: 280px;
+    opacity: 0.8;
+}
+
+.contentWrapper.expanded {
+    max-height: none;
+    opacity: 1;
+}
+
+.toggleBtn {
+    display: block;
+    margin: 16px auto;
+    padding: 10px 20px;
+    background: #ed1c25;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggleBtn:hover {
+    background: #c80505;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.toggleBtn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 12px;
+    }
+
+    .titleGroup {
+        padding: 16px 8px;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .group_Select {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .selectGroup {
+        width: 300px;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .selectBox {
+        width: 130px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .options {
+        font-size: 0.9rem;
+    }
+
+    .tableDauDuoi,
+    .tableSpecialDauDuoi,
+    .tableDauDuoiByDate {
+        font-size: 0.9rem;
+    }
+
+    .tableDauDuoi th,
+    .tableDauDuoi td,
+    .tableSpecialDauDuoi th,
+    .tableSpecialDauDuoi td,
+    .tableDauDuoiByDate th,
+    .tableDauDuoiByDate td {
+        padding: 10px 12px;
+    }
+
+    .tableDauDuoiByDate td:first-child {
+        width: 20%;
+    }
+
+    .tableDauDuoiByDate td:not(:first-child) {
+        width: calc(80% / 10);
+    }
+}
+
+@media (max-width: 768px) {
+    .actionBtn {
+        display: grid;
+        grid-template-columns: minmax(100px, 1fr);
+        background-color: #ffffff;
+        align-items: center;
+    }
+
+    .container {
+        min-width: 100%;
+        padding: 8px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .selectBox {
+        width: 130px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .options {
+        font-size: 0.9rem;
+    }
+
+    .tableDauDuoi,
+    .tableSpecialDauDuoi {
+        font-size: 0.85rem;
+    }
+
+    .tableDauDuoi th,
+    .tableDauDuoi td,
+    .tableSpecialDauDuoi th,
+    .tableSpecialDauDuoi td {
+        padding: 8px 10px;
+    }
+
+    .tableDauDuoiByDate {
+        font-size: 0.95rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tableDauDuoiByDate th,
+    .tableDauDuoiByDate td {
+        padding: 8px 10px;
+        min-width: 48px;
+    }
+
+    .tableDauDuoiByDate td:first-child {
+        position: sticky;
+        left: 0;
+        background-color: #f3f4f6;
+        z-index: 1;
+        width: 25%;
+        font-size: 0.95rem;
+    }
+
+    .tableDauDuoiByDate td:not(:first-child) {
+        width: calc(75% / 10);
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .selectBox {
+        width: 190px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    .options {
+        font-size: 0.85rem;
+    }
+
+    .tableDauDuoi,
+    .tableSpecialDauDuoi {
+        font-size: 0.8rem;
+    }
+
+    .tableDauDuoi th,
+    .tableDauDuoi td,
+    .tableSpecialDauDuoi th,
+    .tableSpecialDauDuoi td {
+        padding: 6px 8px;
+    }
+
+    .tableDauDuoiByDate {
+        font-size: 0.9rem;
+    }
+
+    .tableDauDuoiByDate th,
+    .tableDauDuoiByDate td {
+        padding: 6px 8px;
+    }
+
+    .tableDauDuoiByDate td:first-child {
+        width: 30%;
+        font-size: 0.9rem;
+    }
+
+    .tableDauDuoiByDate td:not(:first-child) {
+        width: calc(70% / 10);
+        font-size: 0.9rem;
+    }
+}

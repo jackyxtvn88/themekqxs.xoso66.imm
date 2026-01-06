@@ -1,0 +1,1116 @@
+/* Modern Group Chat Component - Thiết kế hiện đại và responsive */
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+	border-right: 1px solid #e2e8f0;
+	overflow: hidden;
+	position: relative;
+}
+
+/* Header Section - Thiết kế gradient hiện đại */
+.header {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	padding: 10px 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	flex-shrink: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(45deg,
+			rgba(255, 255, 255, 0.1) 0%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.1) 100%);
+	animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+	0%,
+	100% {
+		transform: translateX(-100%);
+	}
+
+	50% {
+		transform: translateX(100%);
+	}
+}
+
+.headerContent {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	position: relative;
+	z-index: 1;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 20px;
+	font-weight: 800;
+	color: white;
+	margin: 0;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.titleIcon {
+	font-size: 24px;
+	animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-5px);
+	}
+
+	60% {
+		transform: translateY(-3px);
+	}
+}
+
+.subtitle {
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.9);
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+.stats {
+	display: flex;
+	gap: 4px;
+	/* flex-wrap: wrap; */
+}
+
+.statItem {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: all 0.3s ease;
+}
+
+.statItem:hover {
+	background: rgba(255, 255, 255, 0.25);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.statIcon {
+	font-size: 14px;
+}
+
+/* Rules Section - Thiết kế card hiện đại với tính năng thu gọn */
+.rulesSection {
+	background: white;
+	border-bottom: 1px solid #e2e8f0;
+	flex-shrink: 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+}
+
+.rulesCollapsed {
+	background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.rulesHeader {
+	padding: 5px 5px;
+	background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+	border-bottom: 1px solid #e2e8f0;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: all 0.3s ease;
+}
+
+.rulesHeader:hover {
+	background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.rulesHeader::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.rulesTitle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 15px;
+	font-weight: 700;
+	color: #1f2937;
+	margin: 0;
+	flex: 1;
+}
+
+.rulesIcon {
+	font-size: 18px;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.7;
+	}
+}
+
+.rulesToggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rulesToggle:hover {
+	background: rgba(102, 126, 234, 0.1);
+	transform: scale(1.1);
+}
+
+.toggleIcon {
+	font-size: 16px;
+	color: #667eea;
+	transition: transform 0.3s ease;
+	font-weight: bold;
+}
+
+.toggleIconCollapsed {
+	transform: rotate(-90deg);
+}
+
+.rulesContent {
+	background-color: #fff5cc;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	padding: 16px 20px;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	max-height: 235px;
+	opacity: 1;
+}
+
+.rulesContentCollapsed {
+	max-height: 0;
+	padding: 0 20px;
+	opacity: 0;
+}
+
+.rulesList {
+	margin: 0;
+	padding-left: 20px;
+	font-size: 13px;
+	color: red;
+	line-height: 1.6;
+	font-weight: 600;
+}
+
+.rulesList li {
+	margin-bottom: 8px;
+	position: relative;
+}
+
+.rulesList li::before {
+	content: '•';
+	color: #667eea;
+	font-weight: bold;
+	font-size: 16px;
+	position: absolute;
+	left: -15px;
+	top: 0;
+}
+
+.rulesList li:last-child {
+	margin-bottom: 0;
+}
+
+/* Messages Section - Cải thiện scroll và layout */
+.messagesSection {
+	flex: 1;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: rgba(255, 255, 255, 0.5);
+	min-height: 0;
+	/* Quan trọng cho flex layout */
+	position: relative;
+}
+
+.messagesContainer {
+	flex: 1;
+	overflow-y: auto;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	scroll-behavior: smooth;
+	min-height: 0;
+	/* Quan trọng cho flex layout */
+	height: 100%;
+	/* Đảm bảo chiều cao đầy đủ */
+}
+
+.messagesContainer::-webkit-scrollbar {
+	width: 8px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+	background: rgba(241, 245, 249, 0.5);
+	border-radius: 4px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+	background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+	border-radius: 4px;
+	transition: all 0.3s ease;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+}
+
+/* Loading state */
+.loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	color: #6b7280;
+	font-size: 14px;
+	font-weight: 500;
+	gap: 12px;
+}
+
+.loading::after {
+	content: '';
+	width: 20px;
+	height: 20px;
+	border: 2px solid #e5e7eb;
+	border-top: 2px solid #667eea;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Message Item - Thiết kế card hiện đại */
+.messageItem {
+	display: flex;
+	gap: 12px;
+	padding: 4px 3px;
+	border-radius: 12px;
+	background: white;
+	border: 1px solid #e2e8f0;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	position: relative;
+	overflow: visible;
+	/* Thay đổi từ hidden sang visible */
+	animation: slideInMessage 0.3s ease-out;
+	width: 100%;
+	/* Đảm bảo chiều rộng đầy đủ */
+	min-height: fit-content;
+	/* Đảm bảo chiều cao phù hợp với nội dung */
+}
+
+.messageItem::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.messageItem:hover {
+	background: #f8fafc;
+	border-color: #667eea;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.messageItem:hover::before {
+	opacity: 1;
+}
+
+.ownMessage {
+	background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+	border-color: #3b82f6;
+	box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.ownMessage:hover {
+	background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+	box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);
+}
+
+/* Avatar Styles - Thiết kế hiện đại */
+.avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 16px;
+	font-weight: 700;
+	color: white;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+	/* Quan trọng để avatar không bị co lại */
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.avatar::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(45deg,
+			rgba(255, 255, 255, 0.2) 0%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.2) 100%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.avatar:hover {
+	transform: scale(1.1) rotate(5deg);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.avatar:hover::before {
+	opacity: 1;
+}
+
+.avatarImage {
+	border-radius: 50%;
+	object-fit: cover;
+	transition: all 0.3s ease;
+	width: 100%;
+	height: 100%;
+}
+
+.avatarInitials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	font-size: 16px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Avatar Colors - Gradient hiện đại */
+.avatarA {
+	/* background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%); */
+}
+
+.avatarB {
+	/* background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%); */
+}
+
+/* Message Content - Layout cải tiến */
+.messageContent {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	flex: 1;
+	min-width: 0;
+	/* Quan trọng cho text overflow */
+	width: 100%;
+	/* Đảm bảo chiều rộng đầy đủ */
+}
+
+.messageHeader {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.username {
+	font-size: 14px;
+	font-weight: 700;
+	color: #111827;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.username:hover {
+	color: #667eea;
+	text-decoration: underline;
+}
+
+.username.avatarA {
+	color: #dc2626;
+}
+
+.username.avatarB {
+	color: #2563eb;
+}
+
+.role {
+	padding: 3px 8px;
+	background: #f3f4f6;
+	color: #6b7280;
+	border-radius: 12px;
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	transition: all 0.3s ease;
+	white-space: nowrap;
+}
+
+.role.avatarA {
+	background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+	color: #dc2626;
+	border: 1px solid #fecaca;
+}
+
+.role.avatarB {
+	background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+	color: #2563eb;
+	border: 1px solid #bfdbfe;
+}
+
+.timestamp {
+	font-size: 12px;
+	color: #6b7280;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.messageText {
+	font-size: 14px;
+	color: #374151;
+	line-height: 1.5;
+	margin: 0;
+	word-wrap: break-word;
+	font-weight: 400;
+	overflow-wrap: break-word;
+	width: 100%;
+	/* Đảm bảo chiều rộng đầy đủ */
+	word-break: break-word;
+	/* Xử lý từ dài */
+}
+
+/* Empty State - Thiết kế đẹp mắt */
+.emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	padding: 48px 24px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 16px;
+	margin: 20px;
+	backdrop-filter: blur(10px);
+}
+
+.emptyIcon {
+	font-size: 48px;
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+.emptyText {
+	font-size: 16px;
+	color: #4b5563;
+	font-weight: 600;
+	margin: 0;
+}
+
+.emptySubtext {
+	font-size: 14px;
+	color: #6b7280;
+	margin: 0;
+}
+
+/* Input Section - Thiết kế hiện đại */
+.inputSection {
+	background: white;
+	border-top: 1px solid #e2e8f0;
+	flex-shrink: 0;
+	box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.inputForm {
+	padding: 6px;
+	margin-bottom: 40px;
+}
+
+.inputWrapper {
+	display: flex;
+	gap: 3px;
+	position: relative;
+}
+
+.input {
+	width: 100%;
+	padding: 12px 16px;
+	border: 2px solid #e5e7eb;
+	border-radius: 12px;
+	font-size: 14px;
+	background: white;
+	color: #374151;
+	resize: none;
+	transition: all 0.3s ease;
+	font-family: inherit;
+	line-height: 1.5;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input:focus {
+	outline: none;
+	border-color: #667eea;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1),
+		0 4px 12px rgba(0, 0, 0, 0.1);
+	transform: translateY(-1px);
+}
+
+.inputFooter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.charCount {
+	font-size: 12px;
+	color: #6b7280;
+	font-weight: 500;
+}
+
+.sendButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.sendButton:hover {
+	background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+	transform: translateY(-2px) scale(1.05);
+	box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+.sendButton:active {
+	transform: translateY(0) scale(0.95);
+}
+
+.sendButton:disabled {
+	background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+.sendIcon {
+	font-size: 16px;
+	transition: transform 0.3s ease;
+}
+
+.sendButton:hover .sendIcon {
+	transform: translateX(2px);
+}
+
+/* Login Prompt - Thiết kế đẹp mắt */
+.loginPrompt {
+	padding: 20px;
+	background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+	border-top: 1px solid #e2e8f0;
+}
+
+.loginContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	text-align: center;
+}
+
+.loginText {
+	font-size: 14px;
+	color: #4b5563;
+	margin: 0;
+	font-weight: 500;
+}
+
+.loginButton {
+	padding: 10px 20px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	border: none;
+	border-radius: 12px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.loginButton:hover {
+	background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+.loginButton:active {
+	transform: translateY(0);
+}
+
+/* Error Container - Thiết kế cảnh báo */
+.errorContainer {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 16px;
+	background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+	border: 1px solid #fecaca;
+	border-radius: 12px;
+	margin: 12px 16px;
+	color: #dc2626;
+	font-size: 13px;
+	font-weight: 500;
+	box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+	animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.errorIcon {
+	font-size: 16px;
+	animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	25% {
+		transform: translateX(-2px);
+	}
+
+	75% {
+		transform: translateX(2px);
+	}
+}
+
+.errorText {
+	flex: 1;
+}
+
+/* Private Chats Container */
+.privateChatsContainer {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* Animation cho tin nhắn mới */
+@keyframes slideInMessage {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Responsive Design - Cải tiến */
+@media (max-width: 768px) {
+	.container {
+		height: auto;
+		min-height: 100vh;
+	}
+
+	.header {
+		padding: 16px 12px;
+	}
+
+	.headerContent {
+		gap: 8px;
+	}
+
+	.title {
+		font-size: 18px;
+	}
+
+	.titleIcon {
+		font-size: 20px;
+	}
+
+	.subtitle {
+		font-size: 12px;
+	}
+
+	.statItem {
+		font-size: 11px;
+		padding: 4px 8px;
+	}
+
+	.rulesHeader {
+		padding: 12px 16px;
+	}
+
+	.rulesTitle {
+		font-size: 14px;
+	}
+
+	.rulesList {
+		font-size: 12px;
+	}
+
+	.messagesContainer {
+		padding: 12px;
+		gap: 10px;
+	}
+
+	.messageItem {
+		padding: 10px 12px;
+	}
+
+	.avatar {
+		width: 36px;
+		height: 36px;
+	}
+
+	.messageText {
+		font-size: 13px;
+	}
+
+	.input {
+		font-size: 13px;
+		padding: 10px 14px;
+	}
+
+	.loginText {
+		font-size: 13px;
+	}
+
+	.loginButton {
+		font-size: 12px;
+		padding: 8px 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 16px;
+	}
+
+	.titleIcon {
+		font-size: 18px;
+	}
+
+	.subtitle {
+		font-size: 11px;
+	}
+
+	.statItem {
+		font-size: 10px;
+		padding: 3px 6px;
+	}
+
+	.rulesTitle {
+		font-size: 13px;
+	}
+
+	.rulesList {
+		font-size: 11px;
+	}
+
+	.username {
+		font-size: 13px;
+	}
+
+	.messageText {
+		font-size: 12px;
+	}
+
+	.timestamp {
+		font-size: 11px;
+	}
+
+	.input {
+		font-size: 12px;
+	}
+
+	.charCount {
+		font-size: 11px;
+	}
+
+	.loginText {
+		font-size: 12px;
+	}
+
+	.loginButton {
+		font-size: 11px;
+	}
+
+	.avatar {
+		width: 32px;
+		height: 32px;
+	}
+
+	.sendButton {
+		width: 36px;
+		height: 36px;
+	}
+}
+
+/* Dark Mode Support - Cải tiến */
+@media (prefers-color-scheme: dark) {
+	.container {
+		background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+		border-right-color: #374151;
+	}
+
+	.header {
+		background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+		border-bottom-color: #374151;
+	}
+
+	.subtitle {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.rulesSection {
+		background: #111827;
+		border-bottom-color: #374151;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.rulesCollapsed {
+		background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+	}
+
+	.rulesHeader {
+		background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+		border-bottom-color: #4b5563;
+	}
+
+	.rulesHeader:hover {
+		background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+	}
+
+	.rulesTitle {
+		color: #f9fafb;
+	}
+
+	.rulesList {
+		color: #9ca3af;
+	}
+
+	.toggleIcon {
+		color: #6366f1;
+	}
+
+	.messageItem {
+		background: #374151;
+		border-color: #4b5563;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+	.messageItem:hover {
+		background: #4b5563;
+		border-color: #6366f1;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.ownMessage {
+		background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+		border-color: #3b82f6;
+		box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+	}
+
+	.ownMessage:hover {
+		background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+		box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+	}
+
+	.username {
+		color: #f9fafb;
+	}
+
+	.username:hover {
+		color: #6366f1;
+	}
+
+	.messageText {
+		color: #d1d5db;
+	}
+
+	.timestamp {
+		color: #9ca3af;
+	}
+
+	.inputSection {
+		background: #111827;
+		border-top-color: #374151;
+		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.input {
+		background: #374151;
+		border-color: #4b5563;
+		color: #f9fafb;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+	.input:focus {
+		border-color: #6366f1;
+		box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1),
+			0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.charCount {
+		color: #9ca3af;
+	}
+
+	.loginPrompt {
+		background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+		border-top-color: #4b5563;
+	}
+
+	.loginText {
+		color: #9ca3af;
+	}
+
+	.emptyState {
+		background: rgba(55, 65, 81, 0.8);
+	}
+
+	.emptyText {
+		color: #9ca3af;
+	}
+
+	.emptySubtext {
+		color: #6b7280;
+	}
+
+	.errorContainer {
+		background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+		border-color: #fca5a5;
+		color: #fca5a5;
+		box-shadow: 0 2px 8px rgba(127, 29, 29, 0.3);
+	}
+
+	.messagesSection {
+		background: rgba(17, 24, 39, 0.5);
+	}
+
+	.loading {
+		color: #9ca3af;
+	}
+
+	.loading::after {
+		border-color: #4b5563;
+		border-top-color: #6366f1;
+	}
+}
