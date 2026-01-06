@@ -1,0 +1,26 @@
+// Stub lottery lists
+export const soDanhSach = [];
+export const dauChanList = [];
+export const dauLeList = [];
+export const dauBeList = [];
+export const dauLonList = [];
+export const duoiChanList = [];
+export const duoiLeList = [];
+export const duoiBeList = [];
+export const duoiLonList = [];
+export const tongChanList = [];
+export const tongLeList = [];
+export const tongBeList = [];
+export const tongLonList = [];
+export const chanChanList = [];
+export const chanLeList = [];
+export const leChanList = [];
+export const leLeList = [];
+export const beBeList = [];
+export const beLonList = [];
+export const lonBeList = [];
+export const lonLonList = [];
+export const kepBangList = [];
+export const kepLechList = [];
+export const kepAmList = [];
+export const satKepList = [];
