@@ -12,22 +12,22 @@ import { useRouter } from 'next/router';
 import AdvancedLoadingBar from '../components/AdvancedLoadingBar';
 
 // Lazy load components để tối ưu hiệu suất
-const LazyNavBar = dynamic(() => import('../component/navbar'), {
+const LazyNavBar = dynamic(() => import('../components/OptimizedNavigation'), {
     loading: () => <div style={{ height: '60px', background: '#f5f5f5' }}>Đang tải...</div>,
     ssr: true
 });
 
-const LazyClock = dynamic(() => import('../component/clock'), {
+const LazyClock = dynamic(() => import('../components/VietnamTimeDisplay'), {
     loading: () => <div style={{ height: '30px', background: '#f5f5f5' }}>Đang tải...</div>,
     ssr: false
 });
 
-const LazyCalendarMobile = dynamic(() => import('../component/caledarMobile'), {
+const LazyCalendarMobile = dynamic(() => import('../components/OptimizedNavigation'), {
     loading: () => <div style={{ height: '40px', background: '#f5f5f5' }}>Đang tải...</div>,
     ssr: false
 });
 
-const LazyFooter = dynamic(() => import('../component/footer'), {
+const LazyFooter = dynamic(() => import('../components/OptimizedNavigation'), {
     loading: () => <div style={{ height: '100px', background: '#f5f5f5' }}>Đang tải...</div>,
     ssr: true
 });

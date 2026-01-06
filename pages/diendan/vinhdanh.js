@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import styles from '../../styles/vinhdanh.module.css';
-import { isValidObjectId } from '../../utils/validation';
+const isValidObjectId = (id) => /^[a-f\d]{24}$/i.test(id);
 import moment from 'moment';
 import 'moment-timezone';
 import Image from 'next/image';

@@ -6,7 +6,7 @@ import axios from 'axios';
 import moment from 'moment';
 import 'moment-timezone';
 import Image from 'next/image';
-import { isValidObjectId } from '../../utils/validation';
+const isValidObjectId = (id) => /^[a-f\d]{24}$/i.test(id);
 import styles from '../../styles/lichsudangky.module.css';
 import PrivateChat from './chatrieng';
 import UserInfoModal from './modals/UserInfoModal';
