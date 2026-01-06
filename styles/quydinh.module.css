@@ -1,0 +1,109 @@
+/* Modern Quy Dinh Component - Phù hợp với bố cục diễn đàn */
+.Quydinh {
+	width: 100%;
+	background: white;
+	border-radius: 1rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	padding: 2rem;
+	border: 1px solid #e5e7eb;
+	transition: box-shadow 0.3s ease;
+	font-family: var(--font-sans);
+	overflow-x: auto;
+}
+
+.Quydinh:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: #1f2937;
+	position: relative;
+	background: linear-gradient(135deg, #4ade80, #22c55e);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.title::after {
+	content: '';
+	position: absolute;
+	bottom: -0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(90deg, #4ade80, #22c55e);
+	border-radius: 4px;
+}
+
+.subtitle {
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: #374151;
+	margin: 1.5rem 0 1rem 0;
+	padding: 0.75rem 1rem;
+	background: #f9fafb;
+	border-radius: 0.5rem;
+	border-left: 4px solid #4ade80;
+}
+
+.des {
+	font-size: 0.875rem;
+	color: #6b7280;
+	line-height: 1.6;
+	margin-bottom: 0.75rem;
+	/* padding: 0.5rem 0; */
+}
+
+.des:last-of-type {
+	margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.Quydinh {
+		padding: 1.5rem;
+	}
+
+	.title {
+		font-size: 1.25rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+		margin: 1rem 0 0.75rem 0;
+		padding: 0.5rem 0.75rem;
+	}
+
+	.des {
+		font-size: 0.8rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.Quydinh {
+		padding: 1rem;
+	}
+
+	.title {
+		font-size: 1.125rem;
+		margin-bottom: 1rem;
+	}
+
+	.subtitle {
+		font-size: 0.875rem;
+		margin: 0.75rem 0 0.5rem 0;
+		padding: 0.5rem;
+	}
+
+	.des {
+		font-size: 0.75rem;
+		margin-bottom: 0.5rem;
+	}
+}

@@ -1,0 +1,616 @@
+.pageWrapper {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 40px 0 103px;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    box-sizing: border-box;
+}
+
+.contentWrapper {
+    flex: 0 0 72%;
+    max-width: 92%;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.relatedPosts {
+    flex: 0 0 20%;
+    position: relative;
+    max-width: 20%;
+}
+
+.relatedTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.relatedItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+/* css ---------Banner */
+.groupbanner4 {
+    display: none;
+}
+
+.banner1 {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: -20px;
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.videobanner {
+    object-fit: cover;
+    width: 300px;
+    height: 100%;
+    /* max-width: 100%; */
+}
+
+.groupbanner3 {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+}
+
+.banner3 {
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.relatedItem:hover {
+    transform: scale(1.02);
+}
+
+.relatedItem:hover .relatedItemTitle {
+    color: #e63946;
+}
+
+.relatedItem[title] {
+    cursor: pointer;
+}
+
+.relatedImage {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.relatedItemTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.noRelated {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.footballPosts {
+    margin-top: 30px;
+}
+
+.footballTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.footballItem {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.footballItem:hover {
+    transform: scale(1.02);
+}
+
+.footballItem:hover .footballItemTitle {
+    color: #e63946;
+}
+
+.footballItem[title] {
+    cursor: pointer;
+}
+
+.footballImage {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.footballContent {
+    flex: 1;
+}
+
+.footballItemTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    margin: 0 0 5px;
+    transition: color 0.2s ease;
+}
+
+.footballItemExcerpt {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.noFootball {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin: 0 0 15px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.date {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b6b 10%, #e63946 100%);
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.category {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--category-color, #6b7280);
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.author {
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #555;
+}
+
+.imageWrapper {
+    margin: 20px 0;
+}
+
+.image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.caption {
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+}
+
+.content {
+    margin: 20px 0;
+}
+
+.mainContent {
+    margin-bottom: 30px;
+}
+
+.subSection {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subSection.imageFirst {
+    flex-direction: column;
+}
+
+.subSectionTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.subSectionContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.description {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.description p {
+    margin: 15px 0;
+}
+
+.backButton {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff6b6b 10%, #e63946 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.backButton:hover {
+    opacity: 0.9;
+}
+
+.loading,
+.error {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+    margin: 40px 0;
+}
+
+.error {
+    color: #e63946;
+}
+
+.skeletonTitle,
+.skeletonImage,
+.skeletonText {
+    background: #e0e0e0;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+.skeletonTitle {
+    width: 60%;
+    height: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.skeletonImage {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.skeletonText {
+    width: 90%;
+    height: 1rem;
+    margin-bottom: 10px;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 0 10px;
+        padding: 0 10px;
+        gap: 30px;
+    }
+
+    .banner1 {
+        display: none;
+    }
+
+    .groupbanner4 {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .contentWrapper {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        order: 1;
+    }
+
+    .relatedPosts {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 25px;
+        order: 2;
+    }
+
+    .footballPosts {
+        margin-top: 25px;
+        order: 3;
+    }
+
+    .relatedItem {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .relatedImage {
+        width: 100px;
+        height: 80px;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .relatedItemTitle {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.4;
+        flex: 1;
+    }
+
+    .noRelated {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .footballItem {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        margin-bottom: 15px;
+    }
+
+    .footballImage {
+        width: 100%;
+        height: 180px;
+        border-radius: 6px;
+    }
+
+    .footballItemTitle {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+
+    .footballItemExcerpt {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .noFootball {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .meta {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .date,
+    .category,
+    .author {
+        font-size: 0.95rem;
+        padding: 5px 10px;
+    }
+
+    .imageWrapper {
+        margin: 15px 0;
+    }
+
+    .image {
+        border-radius: 6px;
+    }
+
+    .caption {
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+
+    .mainContent,
+    .subSection {
+        margin-bottom: 25px;
+    }
+
+    .subSectionTitle {
+        font-size: 1.6rem;
+    }
+
+    .description {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .description p {
+        margin: 10px 0;
+    }
+
+    .backButton {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .loading,
+    .error {
+        font-size: 1.1rem;
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin: 0 5px;
+        padding: 0 5px;
+    }
+
+    .contentWrapper {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        line-height: 1.35;
+    }
+
+    .relatedTitle,
+    .footballTitle {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .relatedItem {
+        padding: 8px;
+        gap: 12px;
+    }
+
+    .relatedImage {
+        width: 90px;
+        height: 70px;
+    }
+
+    .relatedItemTitle {
+        font-size: 0.95rem;
+    }
+
+    .footballItem {
+        padding: 8px;
+    }
+
+    .footballImage {
+        height: 200px;
+    }
+
+    .footballItemTitle {
+        font-size: 1rem;
+    }
+
+    .footballItemExcerpt {
+        font-size: 0.9rem;
+    }
+
+    .caption {
+        font-size: 0.85rem;
+    }
+
+    .mainContent,
+    .subSection {
+        margin-bottom: 20px;
+    }
+
+    .subSectionTitle {
+        font-size: 1.4rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .description p {
+        margin: 8px 0;
+    }
+
+    .backButton {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}

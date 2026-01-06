@@ -1,0 +1,317 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.2);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 400px;
+    /* Giảm chiều rộng từ 640px xuống 400px */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.loginForm {
+    position: relative;
+    font-family: "Inter", sans-serif;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    min-height: 500px;
+    /* Tăng chiều cao tối thiểu để form dài hơn */
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: fadeIn 0.7s ease-out;
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #374151;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+    color: #dc2626;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    text-align: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 12px;
+    animation: fadeIn 0.9s ease-out 0.1s both;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Tăng khoảng cách trong formGroup */
+    animation: fadeIn 0.9s ease-out 0.3s both;
+}
+
+.labelName,
+.labelPassword {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    display: block;
+    margin-bottom: 12px;
+    /* Tăng khoảng cách giữa label và input */
+}
+
+.inputName,
+.inputPassword {
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #d1d5db;
+    padding: 12px;
+    font-size: 0.875rem;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #f9fafb;
+}
+
+.inputName:focus,
+.inputPassword:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+.dangky {
+    text-align: center;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 20px 0;
+    animation: fadeIn 0.9s ease-out 0.5s both;
+}
+
+.dangky a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.dangky a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: #3b82f6;
+    transition: width 0.4s ease;
+}
+
+.dangky a:hover::after {
+    width: 100%;
+    animation: slideIn 0.4s ease;
+}
+
+.dangky a:hover {
+    color: #2563eb;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.actionSubmit {
+    display: block;
+    width: 100%;
+    max-width: 160px;
+    /* Thu nhỏ nút submit để phù hợp với form hẹp */
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.9s ease-out 0.7s both;
+}
+
+.actionSubmit:hover {
+    background-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.actionSubmit:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+}
+
+.actionSubmit:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.error {
+    color: #e11d48;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(225, 29, 72, 0.1);
+    animation: fadeIn 0.9s ease-out;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 640px) {
+    .modalOverlay {
+        padding: 12px;
+    }
+
+    .container {
+        max-width: 90%;
+        /* Hẹp hơn trên mobile */
+    }
+
+    .loginForm {
+        padding: 20px;
+        min-height: 450px;
+        /* Giảm chiều cao tối thiểu cho mobile */
+    }
+
+    .closeButton {
+        font-size: 1rem;
+        top: 12px;
+        right: 12px;
+    }
+
+    .header {
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        padding-bottom: 8px;
+    }
+
+    .formContainer {
+        gap: 16px;
+    }
+
+    .formGroup {
+        gap: 12px;
+    }
+
+    .labelName,
+    .labelPassword {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+        /* Tăng khoảng cách nhẹ trên mobile */
+    }
+
+    .inputName,
+    .inputPassword {
+        height: 40px;
+        font-size: 0.75rem;
+        padding: 10px;
+    }
+
+    .dangky {
+        font-size: 0.75rem;
+        margin: 16px 0;
+    }
+
+    .buttonGroup {
+        gap: 12px;
+    }
+
+    .actionSubmit {
+        padding: 10px;
+        font-size: 0.75rem;
+        max-width: 140px;
+        /* Thu nhỏ nút submit trên mobile */
+    }
+
+    .error {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
+}

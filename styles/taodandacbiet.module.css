@@ -1,0 +1,333 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: "Inter", sans-serif;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c80505;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fullWidth {
+    grid-column: span 3;
+}
+
+.groupTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.input {
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.input:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+}
+
+.input[type="select"],
+.input select {
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filterButton {
+    padding: 8px 12px;
+    border: 1px solid #c80505;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #c80505;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filterButton.active {
+    background-color: #c80505;
+    color: #ffffff;
+}
+
+.resetButton {
+    background-color: #ffffff;
+    color: #c80505;
+    border: 1px solid #c80505;
+}
+
+.result {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.resultHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.resultTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #c80505;
+}
+
+.copyButton {
+    padding: 8px 16px;
+    background-color: #c80505;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.listItem {
+    background-color: #f3f4f6;
+    padding: 8px 12px;
+    font-weight: 600;
+    color: #c80505;
+    border-radius: 6px;
+    font-size: 1rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.noResult {
+    text-align: center;
+    color: #c80505;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+.modal {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background-color: #c80505;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 12px;
+    }
+
+    .form {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .fullWidth {
+        grid-column: span 2;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .groupTitle {
+        font-size: 1rem;
+    }
+
+    .input {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .filterButton {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .copyButton {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .result {
+        padding: 12px;
+    }
+
+    .resultTitle {
+        font-size: 1.2rem;
+    }
+
+    .listItem {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        min-width: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .fullWidth {
+        grid-column: span 1;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .groupTitle {
+        font-size: 0.95rem;
+    }
+
+    .input {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    .filterButton {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    .copyButton {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .result {
+        padding: 10px;
+    }
+
+    .resultTitle {
+        font-size: 1.1rem;
+    }
+
+    .listItem {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+        min-width: 30px;
+    }
+
+    .modal {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .form {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .groupTitle {
+        font-size: 0.9rem;
+    }
+
+    .input {
+        font-size: 0.8rem;
+        padding: 5px 6px;
+    }
+
+    .filterButton {
+        font-size: 0.8rem;
+        padding: 5px 6px;
+    }
+
+    .copyButton {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .result {
+        padding: 8px;
+    }
+
+    .resultTitle {
+        font-size: 1rem;
+    }
+
+    .listItem {
+        font-size: 0.8rem;
+        padding: 5px 6px;
+        min-width: 28px;
+    }
+
+    .modal {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+}
