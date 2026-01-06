@@ -11,13 +11,10 @@ module.exports = withBundleAnalyzer({
     },
     env: {
         // ✅ MỚI: Sử dụng backend local mới (có thể thay đổi khi deploy)
-        BACKEND_URL: process.env.BACKEND_URL || "http://localhost:5001",
-        NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001",
+        BACKEND_URL: process.env.BACKEND_URL || "https://backendkqxs-1.onrender.com",
+        NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL || "https://backendkqxs-1.onrender.com",
         NEXT_PUBLIC_BACKEND_URL2: "https://scraper-1-fewd.onrender.com",
-        NEXT_PUBLIC_BACKEND_URL3: process.env.NEXT_PUBLIC_BACKEND_URL3 || "http://localhost:5001",
-        // Fallback về backend cũ nếu backend mới không hoạt động
-        // NEXT_PUBLIC_BACKEND_URL: "https://backendkqxs-1.onrender.com",
-        // NEXT_PUBLIC_BACKEND_URL3: "https://back-end-diendan.onrender.com",
+        NEXT_PUBLIC_BACKEND_URL3: process.env.NEXT_PUBLIC_BACKEND_URL3 || "https://back-end-diendan.onrender.com",
         NEXTAUTH_URL: "https://kqsx.xoso66.im",
         NEXTAUTH_SECRET: "wWjNz+xGXQAUiV/SYroijKwI7n/qSMTZUNaCcKZAHhY=",
     },
