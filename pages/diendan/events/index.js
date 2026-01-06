@@ -7,7 +7,7 @@ import axios from 'axios';
 import moment from 'moment';
 import 'moment-timezone';
 import styles from '../../../styles/eventHotNews.module.css';
-import EditPostModal from '../../../component/EditPostModal';
+import EditPostModal from '../../../components/EditPostModal';
 import {
     FaBullhorn,
     FaCalendar,

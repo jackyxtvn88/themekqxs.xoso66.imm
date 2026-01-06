@@ -15,7 +15,7 @@ import { getSession } from 'next-auth/react';
 import Quydinh from './Quydinh';
 import UserList from './UserList';
 import NavBarDienDan from './navbarDiendan';
-import UserAvatar from '../../component/UserAvatar';
+import UserAvatar from '../../components/UserAvatar';
 import LiveResultButton from '../../components/LiveResultButton';
 // import VietnamTimeDisplay from '../../components/VietnamTimeDisplay';
 import FacebookMobileLayout from './FacebookMobileLayout';

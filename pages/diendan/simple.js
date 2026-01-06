@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import styles from '../../styles/DienDan.module.css';
-import UserAvatar from '../../component/UserAvatar'
+import UserAvatar from '../../components/UserAvatar'
 
 export default function SimpleForum() {
     const [sidebarOpen, setSidebarOpen] = useState(false);

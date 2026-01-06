@@ -12,7 +12,7 @@ import CommentSection from './CommentSection';
 import EventRegistrationsList from './detaillichsudangky';
 import styles from '../../../styles/detaiEventHot.module.css';
 import NavBarDienDan from '../navbarDiendan';
-import UserAvatar from '../../../component/UserAvatar';
+import UserAvatar from '../../../components/UserAvatar';
 import LiveResultButton from '../../../components/LiveResultButton';
 import VietnamTimeDisplay from '../../../components/VietnamTimeDisplay';
 import forumStyles from '../../../styles/DienDan.module.css';
