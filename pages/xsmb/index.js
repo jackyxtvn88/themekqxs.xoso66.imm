@@ -7,7 +7,7 @@ import React from 'react';
 // import LiveResult from './LiveResult';
 import { useInView } from 'react-intersection-observer';
 import { useLottery } from '../../contexts/LotteryContext';
-import TableDate from '../../component/tableDateKQXS';
+import TableDate from '../../components/tableDateKQXS';
 
 
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // Cache 24 giờ
@@ -695,3 +695,4 @@ const KQXS = (props) => {
 };
 
 export default React.memo(KQXS);
+

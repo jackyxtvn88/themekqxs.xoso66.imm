@@ -10,3 +10,4 @@ const EditPostModal = ({ isOpen, onClose, post, onSave }) => {
 };
 
 export default EditPostModal;
+

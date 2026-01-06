@@ -314,3 +314,4 @@ self.addEventListener('error', (event) => {
 self.addEventListener('unhandledrejection', (event) => {
     console.error('Service Worker: Unhandled rejection', event.reason);
 });
+

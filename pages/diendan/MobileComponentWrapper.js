@@ -305,3 +305,4 @@ export function MobilePlayerItem({ player, rank, onClick }) {
         </div>
     );
 }
+

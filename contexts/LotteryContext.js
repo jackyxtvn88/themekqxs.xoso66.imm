@@ -102,3 +102,4 @@ export const useLottery = () => {
     }
     return context;
 };
+

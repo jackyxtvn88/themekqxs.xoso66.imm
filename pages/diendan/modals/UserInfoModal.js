@@ -135,3 +135,4 @@ export default function UserInfoModal({ selectedUser, setSelectedUser, setShowMo
         </div>
     );
 }
+

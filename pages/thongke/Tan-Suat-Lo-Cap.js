@@ -6,8 +6,8 @@ import { apiMB } from '../api/kqxs/kqxsMB';
 import { apiMT } from '../api/kqxs/kqxsMT';
 import { apiMN } from '../api/kqxs/kqxsMN';
 import styles from '../../styles/tansuatLoCap.module.css';
-import ThongKe from '../../component/thongKe';
-import CongCuHot from '../../component/CongCuHot';
+import ThongKe from '../../components/thongKe';
+import CongCuHot from '../../components/CongCuHot';
 import Link from 'next/link';
 
 // Skeleton Loading Component
@@ -423,3 +423,4 @@ export async function getServerSideProps() {
 };
 
 export default TanSuatLoCap;
+

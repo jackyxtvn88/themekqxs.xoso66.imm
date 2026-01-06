@@ -82,3 +82,4 @@ export default function MobileOptimizedWrapper({ children, componentType = 'defa
         </div>
     );
 }
+

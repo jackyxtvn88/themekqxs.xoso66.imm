@@ -111,3 +111,4 @@ const ViewCounter = () => {
 };
 
 export default React.memo(ViewCounter);
+

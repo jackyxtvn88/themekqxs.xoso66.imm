@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { apiMB } from "../api/kqxs/kqxsMB";
 import React from 'react';
 import LiveResult from './LiveResult';
-import TableDate from '../../component/tableDateKQXS';
+import TableDate from '../../components/tableDateKQXS';
 
 import { useInView } from 'react-intersection-observer';
 import { useLottery } from '../../contexts/LotteryContext';
@@ -1452,3 +1452,4 @@ const KQXS = (props) => {
 };
 
 export default React.memo(KQXS);
+

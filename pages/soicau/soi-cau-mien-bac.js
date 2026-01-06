@@ -3,8 +3,8 @@ import Head from 'next/head';
 import { apiMB } from '../api/kqxs/kqxsMB';
 import styles from '../../styles/soicau.module.css';
 import moment from 'moment';
-import Thongke from '../../component/thongKe'
-import CongCuHot from '../../component/CongCuHot'
+import Thongke from '../../components/thongKe'
+import CongCuHot from '../../components/CongCuHot'
 
 // Skeleton Loading Components
 const SkeletonRow = () => (
@@ -530,3 +530,4 @@ export async function getServerSideProps() {
 }
 
 export default SoiCauBachThuMB;
+

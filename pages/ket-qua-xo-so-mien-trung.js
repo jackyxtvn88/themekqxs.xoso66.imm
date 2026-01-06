@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import { useMemo } from 'react';
 import KQXS from './xsmt/index';
-import Calendar from '../component/caledar';
-import ThongKe from '../component/thongKe';
-import ListXSMT from '../component/listXSMT';
-import ListXSMB from '../component/listXSMB';
-import ListXSMN from '../component/listXSMN';
-import TableDate from '../component/tableDateKQXS';
-import CongCuHot from '../component/CongCuHot';
+import Calendar from '../components/caledar';
+import ThongKe from '../components/thongKe';
+import ListXSMT from '../components/listXSMT';
+import ListXSMB from '../components/listXSMB';
+import ListXSMN from '../components/listXSMN';
+import TableDate from '../components/tableDateKQXS';
+import CongCuHot from '../components/CongCuHot';
 import { apiMT } from './api/kqxs/kqxsMT';
 
 export async function getStaticProps() {
@@ -283,3 +283,4 @@ const XSMT = ({ initialData, drawDate }) => {
 XSMT.displayName = 'XSMT';
 
 export default XSMT;
+

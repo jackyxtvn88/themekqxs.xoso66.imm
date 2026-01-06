@@ -1,19 +1,19 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import KQXS from './kqxsAll/index';
-import Calendar from '../component/caledar';
-import ListXSMT from '../component/listXSMT';
-import ListXSMB from '../component/listXSMB';
-import ListXSMN from '../component/listXSMN';
-import TableDate from '../component/tableDateKQXS';
-import CongCuHot from '../component/CongCuHot';
+import Calendar from '../components/caledar';
+import ListXSMT from '../components/listXSMT';
+import ListXSMB from '../components/listXSMB';
+import ListXSMN from '../components/listXSMN';
+import TableDate from '../components/tableDateKQXS';
+import CongCuHot from '../components/CongCuHot';
 import { apiMB } from './api/kqxs/kqxsMB';
 import styles from '../public/css/kqxsMB.module.css';
 
 
 // Lazy load components với loading states
 
-const ThongKe = dynamic(() => import('../component/thongKe.js'), {
+const ThongKe = dynamic(() => import('../components/thongKe.js'), {
     ssr: true,
     loading: () => <div className={styles.skeleton} style={{ height: '300px' }} />
 });
@@ -324,3 +324,4 @@ const XSMB = ({ initialData, drawDate }) => {
 };
 
 export default XSMB;
+

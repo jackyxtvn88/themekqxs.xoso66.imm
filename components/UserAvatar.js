@@ -18,3 +18,4 @@ const UserAvatar = ({ userId, username, size = 'md' }) => {
 };
 
 export default UserAvatar;
+

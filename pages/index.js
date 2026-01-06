@@ -2,13 +2,13 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 // Dynamic imports
-const Calendar = dynamic(() => import('../component/caledar'), { ssr: false });
-const ThongKe = dynamic(() => import('../component/thongKe'), { ssr: false });
-const ListXSMB = dynamic(() => import('../component/listXSMB'), { ssr: false });
-const ListXSMT = dynamic(() => import('../component/listXSMT'), { ssr: false });
-const ListXSMN = dynamic(() => import('../component/listXSMN'), { ssr: false });
-const CongCuHot = dynamic(() => import('../component/CongCuHot'), { ssr: false });
-// const TableDate = dynamic(() => import('../component/tableDateKQXS'), { ssr: false });
+const Calendar = dynamic(() => import('../components/caledar'), { ssr: false });
+const ThongKe = dynamic(() => import('../components/thongKe'), { ssr: false });
+const ListXSMB = dynamic(() => import('../components/listXSMB'), { ssr: false });
+const ListXSMT = dynamic(() => import('../components/listXSMT'), { ssr: false });
+const ListXSMN = dynamic(() => import('../components/listXSMN'), { ssr: false });
+const CongCuHot = dynamic(() => import('../components/CongCuHot'), { ssr: false });
+// const TableDate = dynamic(() => import('../components/tableDateKQXS'), { ssr: false });
 const KQXS = dynamic(() => import('./kqxsAll/index'), { ssr: true });
 
 export async function getServerSideProps() {
@@ -234,3 +234,4 @@ export default function Home({ drawDate }) {
         </div>
     );
 }
+

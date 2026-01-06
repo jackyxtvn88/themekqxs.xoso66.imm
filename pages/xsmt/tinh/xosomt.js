@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from '../../../styles/kqxsMTTinh.module.css';
 import { getFilteredNumber } from "../../../library/utils/filterUtils";
 import { useRouter } from 'next/router';
-import TableDate from '../../../component/tableDateKQXS';
+import TableDate from '../../../components/tableDateKQXS';
 
 const KQXS = (props) => {
     const [data, setData] = useState([]);
@@ -413,3 +413,4 @@ const KQXS = (props) => {
 };
 
 export default KQXS;
+

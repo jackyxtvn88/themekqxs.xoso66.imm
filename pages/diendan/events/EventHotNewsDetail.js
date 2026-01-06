@@ -977,3 +977,4 @@ export default function EventHotNewsDetail() {
         </div>
     );
 }
+

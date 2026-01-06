@@ -8,7 +8,7 @@ import { debounce } from 'lodash';
 import Skeleton from 'react-loading-skeleton';
 import React from 'react';
 import { useLottery } from '../../contexts/LotteryContext';
-import TableDate from '../../component/tableDateKQXS';
+import TableDate from '../../components/tableDateKQXS';
 
 // Print Button Component - Tối ưu hiệu suất
 const PrintButton = React.memo(({ onPrint, selectedDate }) => {
@@ -1502,3 +1502,4 @@ const KQXS = (props) => {
 };
 
 export default React.memo(KQXS);
+

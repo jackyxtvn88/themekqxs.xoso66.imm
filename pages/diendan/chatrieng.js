@@ -452,3 +452,4 @@ export default function PrivateChat({ receiver, socket, onClose, isMinimized: in
         </div>
     );
 }
+

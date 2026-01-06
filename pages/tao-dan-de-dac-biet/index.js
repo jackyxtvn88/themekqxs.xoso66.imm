@@ -4,8 +4,8 @@ import LayNhanhDanDacBiet from './LayNhanhDanDacBiet';
 import DauDuoi from './TaoDanDauDuoi';
 import Cham from './TaoDanCham';
 import Bo from './TaoDanBo';
-import ThongKe from '../../component/thongKe';
-import CongcuHot from '../../component/CongCuHot'
+import ThongKe from '../../components/thongKe';
+import CongcuHot from '../../components/CongCuHot'
 // import styles from '../../styles/taodandacbiet.module.css';
 
 const TaoDanDacBiet = () => {
@@ -33,3 +33,4 @@ const TaoDanDacBiet = () => {
 };
 
 export default TaoDanDacBiet;
+

@@ -32,3 +32,4 @@ const DescriptionContent = () => (
 );
 
 export default DescriptionContent;
+

@@ -2,21 +2,21 @@ import Head from 'next/head';
 import { memo, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import KQXS from './xsmn/xosomn';
-import Calendar from '../component/caledar';
-import ListXSMT from '../component/listXSMT';
-import ListXSMB from '../component/listXSMB';
-import ListXSMN from '../component/listXSMN';
-import TableDate from '../component/tableDateKQXS';
-import CongCuHot from '../component/CongCuHot';
+import Calendar from '../components/caledar';
+import ListXSMT from '../components/listXSMT';
+import ListXSMB from '../components/listXSMB';
+import ListXSMN from '../components/listXSMN';
+import TableDate from '../components/tableDateKQXS';
+import CongCuHot from '../components/CongCuHot';
 import { apiMN } from './api/kqxs/kqxsMN';
 
 // Lazy load components để tối ưu hiệu suất
-const LazyThongKe = dynamic(() => import('../component/thongKe'), {
+const LazyThongKe = dynamic(() => import('../components/thongKe'), {
     loading: () => <div style={{ height: '200px', background: '#f5f5f5' }}>Đang tải...</div>,
     ssr: false
 });
 
-const LazyCongCuHot = dynamic(() => import('../component/CongCuHot'), {
+const LazyCongCuHot = dynamic(() => import('../components/CongCuHot'), {
     loading: () => <div style={{ height: '100px', background: '#f5f5f5' }}>Đang tải...</div>,
     ssr: false
 });
@@ -292,3 +292,4 @@ const XSMN = memo(({ initialData, drawDate }) => {
 XSMN.displayName = 'XSMN';
 
 export default XSMN;
+

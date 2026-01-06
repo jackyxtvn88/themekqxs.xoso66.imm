@@ -899,3 +899,4 @@ export default function GroupChat({ session: serverSession }) {
         </div>
     );
 }
+

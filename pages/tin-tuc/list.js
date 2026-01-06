@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getPosts } from "../api/post/index";
-import ListPost from "../../component/listPost";
+import ListPost from "../../components/listPost";
 import styles from "../../styles/postList.module.css";
 
 const PostList = () => {
@@ -111,3 +111,4 @@ const PostList = () => {
 };
 
 export default PostList;
+

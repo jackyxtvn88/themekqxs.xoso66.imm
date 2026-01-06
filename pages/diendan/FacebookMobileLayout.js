@@ -101,3 +101,4 @@ export default function FacebookMobileLayout({ children }) {
     // Desktop layout - return original content
     return <>{children}</>;
 }
+

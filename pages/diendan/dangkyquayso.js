@@ -344,3 +344,4 @@ export default function LotteryRegistration({ lotteryFields, onRegistrationSucce
         </div>
     );
 }
+

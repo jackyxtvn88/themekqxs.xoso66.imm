@@ -24,3 +24,4 @@ const FilterProvider = ({ children }) => {
 };
 
 export { FilterContext, FilterProvider };
+

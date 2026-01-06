@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import styles from '../../styles/giaidacbiettuan.module.css';
-import ThongKe from '../../component/thongKe';
-import CongCuHot from '../../component/CongCuHot';
+import ThongKe from '../../components/thongKe';
+import CongCuHot from '../../components/CongCuHot';
 import { apiMB } from '../api/kqxs/kqxsMB';
 import { apiMT } from '../api/kqxs/kqxsMT';
 import { apiMN } from '../api/kqxs/kqxsMN';
@@ -608,3 +608,4 @@ export async function getServerSideProps() {
 }
 
 export default GiaiDacBietTheoTuan;
+

@@ -1145,3 +1145,4 @@ function isWithinLiveWindow() {
 }
 
 export default React.memo(LiveResult);
+

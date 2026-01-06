@@ -19,7 +19,7 @@ import {
 } from 'react-icons/fa';
 
 // Tối ưu: Lazy load các component không cần thiết ngay lập tức
-const UserAvatar = dynamic(() => import('../component/UserAvatar'), {
+const UserAvatar = dynamic(() => import('../components/UserAvatar'), {
     ssr: false,
     loading: () => <div className="avatar-skeleton" />
 });
@@ -415,3 +415,4 @@ const OptimizedNavigation = () => {
 };
 
 export default OptimizedNavigation;
+

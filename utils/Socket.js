@@ -5,3 +5,4 @@ export const isSocketConnecting = () => false;
 export const addConnectionListener = () => {};
 export const getCurrentSocket = () => null;
 export const getLastSocketError = () => null;
+

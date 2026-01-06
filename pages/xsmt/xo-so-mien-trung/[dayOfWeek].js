@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import KQXS from '../index';
-import Calendar from '../../../component/caledar';
+import Calendar from '../../../components/caledar';
 import styles from "../../../public/css/itemsKQXS.module.css";
-import ThongKe from '../../../component/thongKe';
-import CongCuHot from '../../../component/CongCuHot';
-import ListXSMT from '../../../component/listXSMT';
-import ListXSMB from '../../../component/listXSMB';
-import ListXSMN from '../../../component/listXSMN';
+import ThongKe from '../../../components/thongKe';
+import CongCuHot from '../../../components/CongCuHot';
+import ListXSMT from '../../../components/listXSMT';
+import ListXSMB from '../../../components/listXSMB';
+import ListXSMN from '../../../components/listXSMN';
 
 import Image from 'next/image';
 // Giả lập API để lấy thông tin ngày

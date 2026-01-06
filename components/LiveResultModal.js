@@ -135,3 +135,4 @@ const LiveResultModal = ({ isOpen, onClose, isForum = false, ...props }) => {
 };
 
 export default LiveResultModal; 
+

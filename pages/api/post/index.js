@@ -250,3 +250,4 @@ export const getCategories = async () => {
         throw error;
     }
 };
+

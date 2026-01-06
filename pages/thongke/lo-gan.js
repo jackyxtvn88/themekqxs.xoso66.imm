@@ -5,10 +5,10 @@ import { apiMB } from '../api/kqxs/kqxsMB';
 import { apiMT } from '../api/kqxs/kqxsMT';
 import { apiMN } from '../api/kqxs/kqxsMN';
 import styles from '../../styles/logan.module.css';
-import ThongKe from '../../component/thongKe';
+import ThongKe from '../../components/thongKe';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import CongCuHot from '../../component/CongCuHot';
+import CongCuHot from '../../components/CongCuHot';
 
 // Skeleton Loading Component
 const SkeletonRow = () => (
@@ -465,3 +465,4 @@ export async function getServerSideProps() {
 }
 
 export default Logan;
+

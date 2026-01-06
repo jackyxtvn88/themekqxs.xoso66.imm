@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import ThongKe from '../../../component/thongKe';
-import CongCuHot from '../../../component/CongCuHot';
+import ThongKe from '../../../components/thongKe';
+import CongCuHot from '../../../components/CongCuHot';
 import Dan3D from './Dan3D';
 import Dan4D from './Dan4D';
 import styles from '../../../styles/taodan3D4D.module.css';
@@ -127,3 +127,4 @@ const TaoDanDac3D4D = () => {
 };
 
 export default TaoDanDac3D4D;
+
